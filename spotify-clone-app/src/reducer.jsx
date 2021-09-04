@@ -2,10 +2,11 @@ export const initialState = {
   user: null,
   playlists: [],
   playing: false,
-  item: null,
+  item: null
   //For Debugging process only Remove After Finished Developing.....
-  token:
-    "BQBKyK5-b8tIS4Ox9OC4RavjAs5ohq9IepZpYNVZF0jbmgnTJqsu27-xD0VF1hL3UEx9hE3WuNPggzF5tMCA3N8EiPksl-X9ooXITPV9QRBrn7-vf7Wrw0pcLhpu3VHN1QVWKNbr5h7XtOYuEewfTBjCpfm0KDDKs7bFjNsySjQ5ExP6eYJK"
+  //"BQBKyK5-b8tIS4Ox9OC4RavjAs5ohq9IepZpYNVZF0jbmgnTJqsu27-xD0VF1hL3UEx9hE3WuNPggzF5tMCA3N8EiPksl-X9ooXITPV9QRBrn7-vf7Wrw0pcLhpu3VHN1QVWKNbr5h7XtOYuEewfTBjCpfm0KDDKs7bFjNsySjQ5ExP6eYJK"
+  // token:
+  //   "BQBKyK5-b8tIS4Ox9OC4RavjAs5ohq9IepZpYNVZF0jbmgnTJqsu27-xD0VF1hL3UEx9hE3WuNPggzF5tMCA3N8EiPksl-X9ooXITPV9QRBrn7-vf7Wrw0pcLhpu3VHN1QVWKNbr5h7XtOYuEewfTBjCpfm0KDDKs7bFjNsySjQ5ExP6eYJK"
 };
 
 const reducer = (state, action) => {
@@ -23,6 +24,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         token: action.token
+      };
+    case "SET_PLAYLISTS":
+      return {
+        ...state,
+        playlists: action.playlists
       };
     default:
       return state;
